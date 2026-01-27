@@ -1,0 +1,5 @@
+uvicorn
+fastapi
+sqlalchemy
+pg8000
+jinja2
