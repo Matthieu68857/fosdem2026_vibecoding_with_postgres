@@ -211,5 +211,10 @@ mcp-toolbox/toolbox
 .DS_Store
 .env
 .gemini/
-.agent/
+.agent/*
+!.agent/skills/
+.agent/skills/*
+!.agent/skills/cloud_sql_postgres_guide/
+.agent/skills/cloud_sql_postgres_guide/*
+!.agent/skills/cloud_sql_postgres_guide/SKILL.md
 .jetskiignore
