@@ -9,12 +9,13 @@ This skill outlines **mandatory rules** for interacting with **Cloud SQL for Pos
 
 ## 1. Cloud SQL PostgreSQL Interaction
 
-*   **Prioritize MCP Tools**: Always use available MCP tools (e.g., `execute_sql`, `list_tables`, `list_indexes`) over shell commands (e.g., `psql` via `run_command`).
+*   **Prioritize MCP Tools**: Always use available MCP tools (e.g., `execute_sql`, `list_tables`, `list_indexes`, `list_installed_extensions`, `list_available_extensions`) over shell commands (e.g., `psql` via `run_command`).
     *   **Bad**: `run_command(CommandLine="psql -c 'SELECT ...'")`
     *   **Good**: `mcp_cloud-sql-postgresql_execute_sql(sql="SELECT ...")`
 *   **Schema Discovery**: Do not assume schema. Use tools to check tables and columns first.
     *   `mcp_cloud-sql-postgresql_list_tables()`
-    *   `mcp_cloud-sql-postgresql_get_column_cardinality()` creates a good summary.
+    *   `mcp_cloud-sql-postgresql_list_installed_extensions()`
+    *   `mcp_cloud-sql-postgresql_list_available_extensions()`
 
 ## 2. AI & Embeddings (`google_ml_integration`)
 
